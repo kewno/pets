@@ -3,6 +3,34 @@
   padding: 10px;
 }
 
+.ui-kit-icons {
+  display: flex;
+  &__icon {
+    margin: 5px;
+  }
+}
+
+.ui-kit-like {
+
+}
+
+.ui-kit-icons-date-time {
+  display: flex;
+  &__elem {
+    max-width: 260px;
+    width: 100%;
+    min-height: 137px;
+    margin: 10px;
+  }
+}
+
+
+.ui-kit-comments {
+  &__comment {
+    max-width: 410px; // поставить для контейнера
+    min-height: 210px; // на странице
+  }
+}
 .ui-kit-btns {
   display: flex;
   margin: 20px;

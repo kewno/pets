@@ -1,0 +1,39 @@
+.menu-pets-elem {
+  width: 73px;
+  height: 73px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  background: var(--back-dark);
+
+  &__name {
+    color: var(--primary-light);
+    margin: 5px 0 0;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.active {
+    background: var(--blue);
+  }
+}
+
+.menu-pets-elem-img {
+  &__img {
+    width: 42px;
+    height: 42px;
+    border-radius: 100px;
+    background: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

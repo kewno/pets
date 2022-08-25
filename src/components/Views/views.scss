@@ -1,0 +1,52 @@
+.views {
+  width: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.views-scale {
+  margin: 0 0 27.5px;
+  background: var(--green-dark);
+  border-radius: 6px;
+  width: 9.68px;
+  height: 138.38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  &__elem {
+    border-radius: 6px;
+    width: 100%;
+
+    &_like {
+      background: var(--danger);
+    }
+
+    &_views {
+      margin: 3.82px 0 0;
+      background: var(--success);
+    }
+  }
+}
+
+.views-date {
+  &__number {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--white);
+    margin: 0 0 6px;
+  }
+
+  &__day {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin: 0;
+  }
+}

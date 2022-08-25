@@ -1,0 +1,26 @@
+.toggle-theme {
+  box-sizing: border-box;
+  width: 110px;
+  display: flex;
+  align-items: center;
+  background: var(--back-dark);
+  padding: 6.7px 5px;
+  border-radius: 20px;
+
+  &__elem {
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    padding: 0 10px;
+    &_active {
+      background: var(--blue);
+      border-radius: 16.2963px;
+      width: 53.33px;
+      height: 32.59px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}

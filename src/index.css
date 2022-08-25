@@ -20,6 +20,9 @@ body {
   --success: #66CB9F;
   --white: #FFFFFF;
   --gray: #96A7AF;
+  --green-500: #22C55E;
+  --green-dark: #2A3C44;
+  --back-dark: rgba(255, 255, 255, 0.05);
 }
 
 code {
