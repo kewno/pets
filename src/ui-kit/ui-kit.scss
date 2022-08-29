@@ -1,6 +1,15 @@
 .ui-kit {
   background: var(--grey-900);
-  padding: 10px;
+  //padding: 10px;
+}
+
+.ui-kit-page {
+  display: flex;
+}
+
+.ui-kit-container {
+  width: 100%;
+  padding: 0 30px 0;
 }
 
 .ui-kit-icons {
@@ -16,6 +25,7 @@
 
 .ui-kit-icons-date-time {
   display: flex;
+  flex-wrap: wrap;
   &__elem {
     max-width: 260px;
     width: 100%;
@@ -50,5 +60,24 @@
     max-width: 400px;
     width: 100%;
     margin-right: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .ui-kit-icons-date-time {
+    flex-direction: column;
+    background: var(--back-dark);
+    max-width: 260px;
+    border-radius: 16px;
+
+    &__elem {
+      min-height: 100px;
+      margin: 0;
+
+      &:first-child {
+        //border: 1px solid red;
+        margin-bottom: -15px;
+      }
+    }
   }
 }

@@ -1,0 +1,50 @@
+.notification {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50px;
+  background: var(--back-dark);
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__point {
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+    position: absolute;
+    right: 2px;
+    top: 3px;
+    background: var(--danger);
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 500px) {
+  .notification {
+    width: 32px;
+    height: 32px;
+
+    &__img {
+      width: 9.25px;
+      height: 11.65px;
+    }
+
+    &__point {
+      width: 6px;
+      height: 6px;
+      right: 2.33px;
+      top: 2px;
+    }
+  }
+}

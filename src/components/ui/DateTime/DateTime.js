@@ -6,7 +6,9 @@ const DateTime = ({headline, text, icon, ...attr}) => {
     return (
         <div className='date-time'>
             <div className='date-time-texts'>
-                <Icon icon={icon}/>
+                <div className="date-time-texts__icon">
+                    <Icon icon={icon}/>
+                </div>
                 <p className='date-time-texts__text'>{text}</p>
             </div>
             <p className='date-time__headline'>{headline}</p>

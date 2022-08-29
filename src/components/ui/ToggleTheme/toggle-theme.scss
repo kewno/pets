@@ -12,6 +12,11 @@
     width: 21px;
     height: 21px;
     padding: 0 10px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
     &_active {
       background: var(--blue);
       border-radius: 16.2963px;
@@ -21,6 +26,32 @@
       align-items: center;
       justify-content: center;
       box-sizing: border-box;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .toggle-theme {
+    padding: 5px;
+    width: 77px;
+    &__elem {
+      width: 21px;
+      height: 21px;
+      padding: 0 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        //width: 90%;
+        width: 13px;
+        height: 13px;
+      }
+
+      &_active {
+        width: 37px;
+        height: 22.02px;
+      }
     }
   }
 }

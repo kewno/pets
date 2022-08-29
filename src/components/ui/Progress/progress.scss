@@ -1,0 +1,63 @@
+.progress {
+  display: flex;
+  padding: 30px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  background: var(--back-dark);
+  max-width: 560px;
+}
+
+.progress-ellipse {
+  width: 254px;
+  height: 254px;
+  position: relative;
+
+  &__percent {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;
+    color: var(--white);
+  }
+}
+
+.progress-head {
+  margin-left: 30px;
+
+  &__headline {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--white);
+    margin: 0 0 20px;
+  }
+}
+
+.progress-head-elem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__img {
+
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--white);
+    margin: 0 0 0 10px;
+  }
+}

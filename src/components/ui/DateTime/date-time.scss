@@ -1,7 +1,7 @@
 .date-time {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
-  padding: 30px 30px 30px 30px;
+  padding: 30px;
   width: 100%;
   box-sizing: border-box;
 
@@ -26,5 +26,43 @@
     line-height: 18px;
     color: var(--white);
     margin: 0 0 0 10px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .date-time {
+    &__headline {
+      font-size: 24px;
+      line-height: 32px;
+      margin: 12px 0 0;
+    }
+  }
+
+  .date-time-texts {
+    &__icon {
+      display: none;
+    }
+
+    &__text {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .date-time {
+    padding: 15px;
+    background: none;
+
+    &__headline {
+      margin: 6px 0 0;
+    }
+  }
+
+  .date-time-texts {
+    &__icon {
+      display: flex;
+      margin: 0 10px 0 0;
+    }
   }
 }

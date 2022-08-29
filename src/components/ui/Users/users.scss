@@ -13,6 +13,7 @@
     .button {
       height: 40px;
       &__elem {
+        font-size: 14px;
         height: 40px;
         line-height: 30px;
       }
@@ -27,6 +28,10 @@
     width: 60px;
     height: 60px;
     margin-right: 10px;
+
+    &:nth-child(6) {
+      display: none;
+    }
 
     &:nth-child(3) {
       margin-right: 0;
@@ -58,5 +63,67 @@
     font-size: 16px;
     line-height: 19px;
     color: var(--white);
+  }
+}
+
+@media (max-width: 1300px) {
+  .users {
+    padding: 30px 35px;
+    min-height: auto;
+
+    &__wrap-btn {
+      margin: 20px 0 0;
+    }
+  }
+  .users-elems {
+    justify-content: space-between;
+    &__elem {
+      margin-right: 20px;
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        display: none;
+      }
+
+      &:first-child {
+        margin-bottom: 20px;
+      }
+
+      &:nth-child(4) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .users {
+    max-width: 100%;
+    padding: 30px 27.5px;
+
+    &__wrap-btn {
+      margin: 35px 0 0;
+    }
+  }
+
+  .users-elems {
+    justify-content: space-around;
+
+    &__elem {
+      margin-right: 0;
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        display: flex;
+      }
+
+      &:nth-child(6) {
+        display: flex;
+      }
+
+      &:first-child {
+        margin-bottom: 35px;
+      }
+    }
   }
 }

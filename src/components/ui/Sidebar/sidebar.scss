@@ -1,0 +1,26 @@
+.sidebar {
+  background: var(--grey-900);
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  height: 100vh;
+  box-sizing: border-box;
+  border-right: 1px solid var(--light-dark);
+
+  &__href {
+    margin: 0 0 80px;
+  }
+
+  &__logout {
+    margin-top: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebar {
+    display: none;
+  }
+}
