@@ -23,6 +23,7 @@ body {
   --green-500: #22C55E;
   --green-dark: #2A3C44;
   --back-dark: rgba(255, 255, 255, 0.05);
+  --grey-1: #98A1BD;
 }
 
 code {

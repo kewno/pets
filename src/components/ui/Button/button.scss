@@ -18,12 +18,21 @@
     line-height: 48px;
     border-radius: 10px;
 
-    &_disable {
-      background: var(--light-dark);
-    }
-
     &:hover {
       opacity: 0.8;
     }
+
+    &_disable {
+      background: var(--light-dark);
+
+      &:hover {
+        opacity: 1;
+        cursor: inherit;
+      }
+    }
   }
+}
+
+@media (max-width: 1300px) {
+
 }

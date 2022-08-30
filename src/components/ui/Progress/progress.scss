@@ -61,3 +61,97 @@
     margin: 0 0 0 10px;
   }
 }
+
+@media (max-width: 1300px) {
+  .progress-ellipse {
+    width: 230px;
+    height: 230px;
+
+    &__percent {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    svg {
+      width: 230px;
+      height: 230px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .progress {
+    max-width: 100%;
+  }
+
+  .progress-ellipse {
+    width: 305px;
+    height: 305px;
+
+    &__percent {
+      font-size: 40px;
+      line-height: 47px;
+    }
+
+    svg {
+      width: 305px;
+      height: 305px;
+    }
+  }
+
+  .progress-head {
+    &__headline {
+      font-size: 24px;
+    }
+  }
+
+  .progress-head-elem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    &__text {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .progress {
+    padding: 15px;
+  }
+
+  .progress-ellipse {
+    width: 105px;
+    height: 105px;
+    margin: auto 0;
+
+    &__percent {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    svg {
+      width: 105px;
+      height: 105px;
+    }
+  }
+
+  .progress-head {
+    &__headline {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  .progress-head-elem {
+    margin-bottom: 8px;
+    align-items: center;
+
+    &__text {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+}

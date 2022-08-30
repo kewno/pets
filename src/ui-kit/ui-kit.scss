@@ -44,6 +44,7 @@
 .ui-kit-btns {
   display: flex;
   margin: 20px;
+  flex-wrap: wrap;
 
   &__btn {
     max-width: 400px;
@@ -55,6 +56,7 @@
 .ui-kit-inputs {
   display: flex;
   margin: 20px;
+  flex-wrap: wrap;
 
   &__input {
     max-width: 400px;
