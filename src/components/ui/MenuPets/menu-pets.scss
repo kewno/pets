@@ -1,0 +1,24 @@
+.menu-pets {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  max-width: 260px;
+  grid-row-gap: 20px;
+}
+
+@media (max-width: 1300px) {
+  .menu-pets {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .menu-pets {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    //grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    //grid-template-rows: 1fr;
+  }
+}
