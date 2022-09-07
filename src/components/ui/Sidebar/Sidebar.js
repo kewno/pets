@@ -1,4 +1,3 @@
-//Sidebar sidebar
 import React from 'react';
 import './sidebar.scss';
 import Menu from "../Menu/Menu";

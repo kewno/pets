@@ -20,15 +20,11 @@
   }
 }
 
-.comment-head-img {
+.comment-img {
   width: 48px;
   height: 48px;
   position: relative;
 
-  //&__img {
-  //  width: 48px;
-  //  height: 48px;
-  //}
 
   &__online {
     position: absolute;
@@ -43,7 +39,7 @@
   }
 }
 
-.comment-head-texts {
+.comment-texts {
   margin-left: 17px;
   &__name {
     font-weight: 700;

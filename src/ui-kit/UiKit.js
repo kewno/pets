@@ -12,12 +12,13 @@ import ToggleTheme from "../components/ui/ToggleTheme/ToggleTheme";
 import Like from "../components/ui/Like/Like"
 import Post from "../components/ui/Post/Post";
 import MenuPets from "../components/ui/MenuPets/MenuPets";
-import PetsStatistics from "../components/ui/PetsStatistics/PetsStatistics";
-import PetsCard from "../components/ui/PetsCard/PetsCard";
+import Statistics from "../components/ui/Statistics/Statistics";
+import Card from "../components/ui/PetsCard/Card";
 import Progress from "../components/ui/Progress/Progress";
 import Notification from "../components/ui/Notification/Notification";
 import Sidebar from "../components/ui/Sidebar/Sidebar";
 import Headline from "../components/ui/Headline/Headline";
+import PopUpMenu from "../components/ui/PopUpMenu/PopUpMenu";
 
 const UiKit = () => {
     let [textOne, setTextOne] = useState('');
@@ -55,7 +56,7 @@ const UiKit = () => {
                 ]}
             />
 
-            <PetsCard
+            <Card
                 coll='169'
                 status={like}
                 setLike={setLike}
@@ -88,7 +89,7 @@ const UiKit = () => {
                 price='5000'
             />
 
-            <PetsStatistics
+            <Statistics
                 name='Johny'
                 like='3'
                 elemSlider={['slide-1.png', 'slide-1.png', 'slide-1.png']}

@@ -12,11 +12,11 @@ const Users = ({users, func, ...attr}) => {
                                 <Avatar name={el.name} />
                            </div>
                 })}
-                <div className='users-elems-add' onClick={() => {func()}}>
-                    <p className='users-elems-add__icon'>+</p>
+                <div className='users-add' onClick={() => {func()}}>
+                    <p className='users-add__icon'>+</p>
                 </div>
             </div>
-            <div className='users__wrap-btn'>
+            <div className='users__btn'>
                 <Button>Напиши сейчас</Button>
             </div>
         </div>

@@ -16,9 +16,11 @@
   }
 }
 
-.date-time-texts {
-  display: flex;
-  align-items: center;
+.date-time {
+  &__texts {
+    display: flex;
+    align-items: center;
+  }
 
   &__text {
     font-weight: 400;
@@ -36,9 +38,7 @@
       line-height: 32px;
       margin: 12px 0 0;
     }
-  }
 
-  .date-time-texts {
     &__icon {
       display: none;
     }
@@ -57,9 +57,7 @@
     &__headline {
       margin: 6px 0 0;
     }
-  }
 
-  .date-time-texts {
     &__icon {
       display: flex;
       margin: 0 10px 0 0;

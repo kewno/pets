@@ -1,4 +1,3 @@
-//Progress
 import React from 'react';
 import './progress.scss';
 
@@ -25,9 +24,9 @@ const Progress = ({headline, headProgress, percent = 69, ...attr}) => {
             <div className='progress-head'>
                 <h2 className='progress-head__headline'>{headline}</h2>
                 {headProgress.map(el => {
-                    return <div className='progress-head-elem'>
-                        <img alt='point' src={require(`../../../img/${el.img}`)} className='progress-head-elem__img'/>
-                        <p className='progress-head-elem__text'>{el.text}</p>
+                    return <div className='progress-head__elem'>
+                        <img alt='point' src={require(`../../../img/${el.img}`)} className='progress-head__img'/>
+                        <p className='progress-head__text'>{el.text}</p>
                     </div>
                 })}
             </div>

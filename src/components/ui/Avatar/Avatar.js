@@ -7,8 +7,8 @@ const Avatar = ({img, name, ...attr}) => {
             {img ?
                 <img src={require(`../../../img/${img}`)} alt='avatar' className='avatar__img' />
                 :
-                <div className='avatar-without-img'>
-                    <p className='avatar-without-img__text'>{name ? name[0] : ''}</p>
+                <div className='avatar-without'>
+                    <p className='avatar-without__text'>{name ? name[0] : ''}</p>
                 </div>
             }
         </div>

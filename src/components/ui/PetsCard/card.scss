@@ -1,41 +1,38 @@
-.pets-card {
+.card {
   display: flex;
   min-height: 800px;
-  //position: relative;
-}
 
-.card-slider-back {
-  display: none;
-}
+  &__slider {
+    max-width: 710px;
+    width: 100%;
+    position: relative;
 
-.pets-card-slider {
-  max-width: 710px;
-  width: 100%;
-  position: relative;
-
-  &:hover {
-    .card-slider {
-      opacity: 1;
+    &:hover {
+      .card-slider {
+        opacity: 1;
+      }
     }
-
-    //.pets-card-slider__img {
-    //  height: 672px;
-    //  width: 100%;
-    //}
   }
 }
 
 .card-slider {
+  &__back {
+    display: none;
+  }
+  &__slide {
+    height: 100%;
+  }
+}
+
+
+.card-slider {
   transition: opacity 0.5s ease-out;
-  //width: 606px;
-  //display: none;
   display: flex;
   opacity: 0;
   height: 800px;
   width: 100%;
   position: absolute;
   top: 0;
-  //height: 100%;
 
   .swiper {
     margin: 0 auto;
@@ -76,7 +73,7 @@
     }
   }
 
-  .pets-card-navigation {
+  .card-navigation {
     position: absolute;
     z-index: 5;
     top: 48%;
@@ -84,11 +81,11 @@
     width: auto;
     height: auto;
 
-    &__prev {
+    &_prev {
       transform: rotate(360deg);
     }
 
-    &__next {
+    &_next {
       right: 2px;
       transform: rotate(180deg);
     }
@@ -100,28 +97,22 @@
 }
 
 
-
-.card-slider-slide-img {
-  //width: 100%;
-  height: 100%;
-}
-
-.pets-card-navigation {
+.card-navigation {
   width: 30px;
   height: 30px;
 }
 
-.pets-card-info {
+.card-info {
   margin: 0 0 0 40px;
   display: flex;
   flex-direction: column;
-}
 
-.pets-card-info-head {
-  display: flex;
-  flex-wrap: wrap;
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-  &__name {
+  &__nick {
     font-style: normal;
     font-weight: 700;
     font-size: 72px;
@@ -142,14 +133,13 @@
     color: var(--primary-light);
     margin: 0;
   }
-}
-
-.pets-card-info-breed {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
 
   &__breed {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  &__name {
     margin: 0;
     color: var(--light-gray);
     font-style: normal;
@@ -174,37 +164,38 @@
     font-size: 32px;
     line-height: 38px;
   }
-}
 
-.pets-card-info-like {
-  display: flex;
-  margin: 20px 0 30px;
-  flex-wrap: wrap;
 
-  .like {
-    flex-direction: row-reverse;
+  &__like {
+    display: flex;
+    margin: 20px 0 30px;
+    flex-wrap: wrap;
 
-    &__text {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 32px;
-      line-height: 108.1%;
-      margin: 0 0 0 11px;
-    }
+    .like {
+      flex-direction: row-reverse;
 
-    &__img {
-      svg {
-        width: 25px;
-        height: 24px;
+      &__text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 108.1%;
+        margin: 0 0 0 11px;
+      }
+
+      &__img {
+        svg {
+          width: 25px;
+          height: 24px;
+        }
       }
     }
   }
-}
 
-.pets-card-info-like-price {
-  display: flex;
-  align-items: center;
-  margin: 0 0 0 50px;
+  &__price {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 50px;
+  }
 
   &__icon {
     margin-right: 10px;
@@ -218,18 +209,20 @@
   }
 }
 
-.pets-card-info-params {
+
+.card-params {
   display: flex;
+  flex-wrap: wrap;
   margin: 0 0 40px;
   padding: 30px 0 0;
   border-top: 1px solid var(--light-dark);
-}
 
-.pets-card-info-params-elem {
-  margin-right: 30px;
+  &__elem {
+    margin-right: 30px;
 
-  &:last-child {
-    margin: 0;
+    &:last-child {
+      margin: 0;
+    }
   }
 
   &__headline {
@@ -249,7 +242,8 @@
   }
 }
 
-.pets-card-info-description {
+
+.card-description {
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -285,20 +279,13 @@
       width: 4px;
     }
   }
-  //&::-webkit-scrollbar-thumb {
-  //  background: var(--back-dark);
-  //}
-  //
-  //&::-webkit-scrollbar-track { //пространство под индикатором
-  //  background: var(--danger);
-  //}
 }
 
-.pets-card-info-btn {
+.card-btn {
   margin-top: auto;
   max-width: 410px;
 
-  .button {
+  .btn {
     &__elem {
       font-style: normal;
       font-weight: 700;
@@ -309,21 +296,18 @@
 }
 
 @media (max-width: 1400px) {
-  .pets-card {
+  .card {
     display: flex;
     min-height: 760px;
     height: 760px;
-  }
 
-  .pets-card-slider {
-    //width: 670px;
-   height: 760px;
+    &__slider {
+      height: 760px;
+    }
 
     &__img {
       height: 100%;
       width: auto;
-      //display: none;
-      //border: 3px solid red;
     }
   }
 
@@ -335,11 +319,12 @@
     }
   }
 
-  .pets-card-info-head {
-    display: flex;
-    flex-wrap: wrap;
-
-    &__name {
+  .card-info {
+    &__head {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__nick {
       font-size: 40px;
     }
 
@@ -356,39 +341,37 @@
     &__country {
       font-size: 40px;
     }
-  }
-
-  .pets-card-info-breed {
-    display: flex;
-    align-items: center;
 
     &__breed {
+      display: flex;
+      align-items: center;
+    }
+    &__name {
       font-size: 20px;
     }
 
     &__animal {
       font-size: 20px;
     }
-  }
 
-  .pets-card-info-like {
-    display: flex;
-    margin: 20px 0 30px;
+    &__like {
+      display: flex;
+      margin: 20px 0 30px;
 
-    .like {
-      flex-direction: row-reverse;
+      .like {
+        flex-direction: row-reverse;
 
-      &__text {
-        font-size: 20px;
+        &__text {
+          font-size: 20px;
+        }
       }
     }
-  }
 
-  .pets-card-info-like-price {
-    display: flex;
-    align-items: center;
-    margin: 0 0 0 10px;
-
+    &__price {
+      display: flex;
+      align-items: center;
+      margin: 0 0 0 10px;
+    }
     &__icon {
       margin-right: 10px;
     }
@@ -397,7 +380,7 @@
     }
   }
 
-  .pets-card-info-params-elem {
+  .card-params {
     &__headline {
       font-size: 22px;
     }
@@ -407,7 +390,7 @@
     }
   }
 
-  .pets-card-info-description {
+  .card-description {
     height: 320px;
 
     &__headline {
@@ -420,9 +403,9 @@
     }
   }
 
-  .pets-card-info-btn {
+  .card-btn {
 
-    .button {
+    .btn {
       &__elem {
         font-size: 18px;
       }
@@ -431,21 +414,18 @@
 }
 
 @media (max-width: 1000px) {
-  .pets-card {
+  .card {
     flex-direction: column;
     height: auto;
-  }
 
-  .card-slider-back {
-    top: 25px;
-    left: 25px;
-    position: absolute;
-    display: block;
-    z-index: 2;
-    cursor: pointer;
+    &__slider {
+      height: 400px;
+      max-width: 100%;
+    }
 
-    &:hover {
-      opacity: 0.8;
+    &__img {
+      width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -457,91 +437,96 @@
       margin: 0 auto;
       max-width: 100%;
 
-      //.swiper-slide {
-      //  .card-slider-slide-img {
-      //    object-fit: contain;
-      //  }
-      //}
-
-      .pets-card-navigation {
+      .card-navigation {
         display: none;
+      }
+    }
+
+    &__slide {
+      width: 100%;
+    }
+
+    &__back {
+      top: 25px;
+      left: 25px;
+      position: absolute;
+      display: block;
+      z-index: 2;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
       }
     }
   }
 
-  .card-slider-slide-img {
-    width: 100%;
-  }
-
-  .pets-card-slider {
-    height: 400px;
-    max-width: 100%;
-
-    &__img {
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .pets-card-info {
+  .card-info {
     margin: 30px 0 0;
   }
 
-  .pets-card-info-description {
+  .card-description {
     height: 185px;
     &__text {
       height: 140px;
     }
   }
 
-  .pets-card-info-btn {
+  .card-btn {
     max-width: 100%;
   }
 }
 
 
 @media (max-width: 800px) {
-  .pets-card-info-breed {
 
-    &__breed {
+  .card-info {
+    &__name {
       font-size: 18px;
     }
 
     &__animal {
       font-size: 18px;
     }
+
+    &__like {
+      .like {
+        &__text {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &__price {
+      display: none;
+    }
   }
 
-  .pets-card-info-params-elem {
+
+
+  .card-params {
     &__headline {
       font-size: 20px;
     }
-  }
-
-  .pets-card-info-like {
-    .like {
-      &__text {
-        font-size: 18px;
-      }
-    }
-  }
-
-  .pets-card-info-like-price {
-    display: none;
   }
 
 }
 
 
 @media (max-width: 500px) {
-  .card-slider-back {
-    top: 20px;
-    left: 20px;
+  .card-slider {
+    &__back {
+      top: 20px;
+      left: 20px;
+    }
   }
 
-  .pets-card-info-head {
-    display: flex;
-    flex-wrap: wrap;
+  .card-info {
+    margin: 30px 25px 0;
+
+    &__head {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
     &__name {
       font-size: 34px;
@@ -560,11 +545,8 @@
     &__country {
       font-size: 34px;
     }
-  }
 
-  .pets-card-info-breed {
-
-    &__breed {
+    &__name {
       font-size: 14px;
     }
 
@@ -577,33 +559,26 @@
     &__animal {
       font-size: 14px;
     }
-  }
 
-  .pets-card-info-like {
+    &__like {
 
-    .like {
-      &__text {
-        font-size: 14px;
-      }
+      .like {
+        &__text {
+          font-size: 14px;
+        }
 
-      &__img {
-        svg {
-          width: 14px;
-          height: 13px;
+        &__img {
+          svg {
+            width: 14px;
+            height: 13px;
+          }
         }
       }
     }
   }
 
-  .pets-card-info {
-    margin: 30px 25px 0;
-  }
-
-  .pets-card-info-params {
+  .card-params {
     margin: 0 0 30px;
-  }
-
-  .pets-card-info-params-elem {
     &__headline {
       font-size: 12px;
     }
@@ -613,7 +588,7 @@
     }
   }
 
-  .pets-card-info-description {
+  .card-description {
     &__headline {
       font-size: 12px;
     }
@@ -623,9 +598,8 @@
     }
   }
 
-  .pets-card-info-btn {
-
-    .button {
+  .card-btn {
+    .btn {
       height: 40px;
 
       &__elem {

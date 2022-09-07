@@ -1,4 +1,3 @@
-//Headline headline
 import React from 'react';
 import './headline.scss';
 import Notification from "../Notification/Notification";

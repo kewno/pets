@@ -1,4 +1,4 @@
-.menu-pets-elem {
+.pets-elem {
   width: 73px;
   height: 73px;
   display: flex;
@@ -25,9 +25,7 @@
   &.active {
     background: var(--blue);
   }
-}
 
-.menu-pets-elem-img {
   &__img {
     width: 42px;
     height: 42px;
@@ -40,7 +38,7 @@
 }
 
 @media (max-width: 1300px) {
-  .menu-pets-elem {
+  .pets-elem {
     width: 95px;
     height: 91px;
 
@@ -51,7 +49,7 @@
 }
 
 @media (max-width: 500px) {
-  .menu-pets-elem {
+  .pets-elem {
     display: none;
 
     &:nth-child(1),

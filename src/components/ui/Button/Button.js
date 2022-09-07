@@ -3,12 +3,12 @@ import {NavLink} from "react-router-dom"
 import './button.scss';
 
 const Button = ({id, href, disable, children, func, ...attr}) => {
-    let buttonClass = 'button__elem';
+    let buttonClass = 'btn__elem';
     if (disable)
-        buttonClass = 'button__elem button__elem_disable';
+        buttonClass = 'btn__elem btn__elem_disable';
 
     return (
-        <div className='button'>
+        <div className='btn'>
             {href ?
                 <NavLink onClick={func} className={buttonClass} to={`/${href}`}>{children}</NavLink>
                 :

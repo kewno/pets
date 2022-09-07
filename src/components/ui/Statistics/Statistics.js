@@ -1,10 +1,9 @@
 import React, {useCallback, useRef} from 'react';
-import './pets-statistics.scss';
+import './statistics.scss';
 import { Navigation} from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -12,23 +11,18 @@ import 'swiper/css/scrollbar';
 import Views from "../../Views/Views";
 
 
-const PetsStatistics = ({elemSlider, name, like, ...attr}) => {
+const Statistics = ({elemSlider, name, like, ...attr}) => {
     const navigationPrevRef = React.useRef(null)
     const navigationNextRef = React.useRef(null)
 
     return (
-        <div className="pets-statistics">
-            <div className="pets-slider-info">
-                <div className='pets-slider'>
+        <div className="statistics">
+            {/*pets-statistics*/}
+            <div className="statistics__info">
+                <div className='statistics-slider'>
                     <Swiper
-
-                        // install Swiper modules
                         modules={[Navigation]}
                         slidesPerView={1}
-                        // navigation={{
-                        //     prevEl: navigationPrevRef.current,
-                        //     nextEl: navigationNextRef.current,
-                        // }}
                         onSwiper={(swiper) => {
                             setTimeout(() => {
                                 swiper.params.navigation.prevEl = navigationPrevRef.current
@@ -41,41 +35,41 @@ const PetsStatistics = ({elemSlider, name, like, ...attr}) => {
                             })
                         }}
                         navigation={{
-                            prevEl: '.pets-statictics-navigation .pets-statictics-navigation__prev',
-                            nextEl: '.pets-statictics-navigation .pets-statictics-navigation__next',
+                            prevEl: '.statistics-slider__navigation .statistics-slider__navigation_prev',
+                            nextEl: '.statistics-slider__navigation .statistics-slider__navigation_next',
                         }}
 
                     >
                         {elemSlider.map(el => {
                             return <SwiperSlide>
-                                        <img src={require(`../../../img/${el}`)} alt='slide' className='pets-slider-slide-img'/>
-                                    </SwiperSlide>
+                                <img src={require(`../../../img/${el}`)} alt='slide' className='pets-slider-slide-img'/>
+                            </SwiperSlide>
                         })}
-                        <div className="pets-statistics-back">
+                        <div className="statistics__back">
 
                         </div>
-                        <div ref={navigationPrevRef} className='pets-statictics-navigation pets-statictics-navigation__prev'>
+                        <div ref={navigationPrevRef} className='statistics-slider__navigation statistics-slider__navigation_prev'>
                             <img src={require(`../../../img/main-navigation.png`)} alt="navigation"/>
                         </div>
-                        <div ref={navigationNextRef} className='pets-statictics-navigation pets-statictics-navigation__next'>
+                        <div ref={navigationNextRef} className='statistics-slider__navigation statistics-slider__navigation_next'>
                             <img src={require(`../../../img/main-navigation.png`)} alt="navigation"/>
                         </div>
                     </Swiper>
                 </div>
-                <div className="pets-info">
-                    <h2 className="pets-info__name">{name}</h2>
-                    <p className="pets-info__like">{`${like} лайка`}</p>
+                <div className="statistics-data">
+                    <h2 className="statistics-data__name">{name}</h2>
+                    <p className="statistics-data__like">{`${like} лайка`}</p>
                 </div>
             </div>
-            <div className="statistics">
+            <div className="statistics-info">
                 <div className="statistics-attributes">
-                    <div className="statistics-attributes-elem">
-                        <p className="statistics-attributes-elem__text">Лайки</p>
-                        <div className="statistics-attributes-elem__point"/>
+                    <div className="statistics-attributes__elem">
+                        <p className="statistics-attributes__text">Лайки</p>
+                        <div className="statistics-attributes__point"/>
                     </div>
-                    <div className="statistics-attributes-elem">
-                        <p className="statistics-attributes-elem__text">Просмотры</p>
-                        <div className="statistics-attributes-elem__point"/>
+                    <div className="statistics-attributes__elem">
+                        <p className="statistics-attributes__text">Просмотры</p>
+                        <div className="statistics-attributes__point"/>
                     </div>
                 </div>
                 <div className="statistics-elems">
@@ -92,4 +86,4 @@ const PetsStatistics = ({elemSlider, name, like, ...attr}) => {
     )
 }
 
-export default PetsStatistics
+export default Statistics

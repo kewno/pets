@@ -41,18 +41,16 @@
   }
 }
 
-.progress-head-elem {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-
+.progress-head {
+  &__elem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
   &:last-child {
     margin-bottom: 0;
   }
 
-  &__img {
-
-  }
   &__text {
     font-weight: 400;
     font-size: 18px;
@@ -103,12 +101,12 @@
     &__headline {
       font-size: 24px;
     }
-  }
 
-  .progress-head-elem {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+    &__elem {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
 
     &__text {
       font-size: 24px;
@@ -139,16 +137,15 @@
   }
 
   .progress-head {
+
     &__headline {
       font-size: 12px;
       line-height: 14px;
     }
-  }
-
-  .progress-head-elem {
-    margin-bottom: 8px;
-    align-items: center;
-
+    &__elem {
+      margin-bottom: 8px;
+      align-items: center;
+    }
     &__text {
       font-size: 12px;
       line-height: 14px;
