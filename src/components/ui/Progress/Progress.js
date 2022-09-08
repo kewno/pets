@@ -25,7 +25,7 @@ const Progress = ({headline, headProgress, percent = 69, ...attr}) => {
                 <h2 className='progress-head__headline'>{headline}</h2>
                 {headProgress.map(el => {
                     return <div className='progress-head__elem'>
-                        <img alt='point' src={require(`../../../img/${el.img}`)} className='progress-head__img'/>
+                        <img alt='point' src={require(`../../../img/ui/${el.img}`)} className='progress-head__img'/>
                         <p className='progress-head__text'>{el.text}</p>
                     </div>
                 })}

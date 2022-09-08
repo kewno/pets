@@ -7,7 +7,7 @@ const Sidebar = ({ ...attr}) => {
     return (
         <div className="sidebar">
             <a href='/' className='sidebar__href'>
-                <img alt='logo' src={require('../../../img/logo-small.png')}/>
+                <img alt='logo' src={require('../../../img/ui/logo-small.png')}/>
             </a>
             <Menu
                 elems={
@@ -83,7 +83,7 @@ const Sidebar = ({ ...attr}) => {
                 }
             />
             <a href='/' className='sidebar__logout'>
-                <img alt='logout' src={require('../../../img/logout.png')}/>
+                <img alt='logout' src={require('../../../img/ui/logout.png')}/>
             </a>
         </div>
     )

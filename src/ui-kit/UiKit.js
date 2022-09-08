@@ -7,13 +7,13 @@ import Comment from "../components/ui/Comment/Comment";
 import Icon from "../components/ui/Icon/Icon";
 import DateTime from "../components/ui/DateTime/DateTime";
 import Users from "../components/ui/Users/Users";
-import Views from "../components/Views/Views";
+import Views from "../components/ui/Views/Views";
 import ToggleTheme from "../components/ui/ToggleTheme/ToggleTheme";
 import Like from "../components/ui/Like/Like"
 import Post from "../components/ui/Post/Post";
 import MenuPets from "../components/ui/MenuPets/MenuPets";
 import Statistics from "../components/ui/Statistics/Statistics";
-import Card from "../components/ui/PetsCard/Card";
+import Card from "../components/ui/Card/Card";
 import Progress from "../components/ui/Progress/Progress";
 import Notification from "../components/ui/Notification/Notification";
 import Sidebar from "../components/ui/Sidebar/Sidebar";
@@ -303,20 +303,18 @@ const UiKit = () => {
                 <div className='ui-kit-btns__btn'>
                     <Button
                         href={'/'}
-                        disable={false}
                     >Войти</Button>
                 </div>
                 <div className='ui-kit-btns__btn'>
                     <Button
                         href={'/'}
-                        disable={true}
+                        disable
                     >Войти</Button>
                 </div>
 
                 <div className='ui-kit-btns__btn'>
                     <Button
                         id={'btn-1'}
-                        disable={false}
                     >Войти</Button>
                 </div>
                 <div className='ui-kit-btns__btn'>

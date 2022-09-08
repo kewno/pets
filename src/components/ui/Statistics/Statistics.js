@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import Views from "../../Views/Views";
+import Views from "../Views/Views";
 
 
 const Statistics = ({elemSlider, name, like, ...attr}) => {
@@ -42,17 +42,17 @@ const Statistics = ({elemSlider, name, like, ...attr}) => {
                     >
                         {elemSlider.map(el => {
                             return <SwiperSlide>
-                                <img src={require(`../../../img/${el}`)} alt='slide' className='pets-slider-slide-img'/>
+                                <img src={require(`../../../img/ui/${el}`)} alt='slide' className='pets-slider-slide-img'/>
                             </SwiperSlide>
                         })}
                         <div className="statistics__back">
 
                         </div>
                         <div ref={navigationPrevRef} className='statistics-slider__navigation statistics-slider__navigation_prev'>
-                            <img src={require(`../../../img/main-navigation.png`)} alt="navigation"/>
+                            <img src={require(`../../../img/ui/main-navigation.png`)} alt="navigation"/>
                         </div>
                         <div ref={navigationNextRef} className='statistics-slider__navigation statistics-slider__navigation_next'>
-                            <img src={require(`../../../img/main-navigation.png`)} alt="navigation"/>
+                            <img src={require(`../../../img/ui/main-navigation.png`)} alt="navigation"/>
                         </div>
                     </Swiper>
                 </div>

@@ -1,0 +1,56 @@
+.loader {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__back {
+    background: var(--loader-back);
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    position: absolute;
+  }
+
+  //width: 252px;
+  //height: 50px;
+
+  &__animation {
+    transform: rotate(45deg);
+    z-index: 3;
+    width: 50px;
+    height: 253px;
+    position: relative;
+  }
+  &__paw {
+    position: absolute;
+    bottom: 0; //4
+
+    animation: eye 3s ease-in-out infinite;
+    //animation-iteration-count: infinite;
+  }
+  @keyframes eye {
+    0%   { opacity: 1; bottom: 0; left: 4px;}
+    20%  { bottom: 45px; left: 27px; }
+    40%  { bottom: 90px; left: 4px; }
+    60%  { bottom: 135px; left: 27px; }
+    80%  { bottom: 180px; left: 4px; }
+    100% { bottom: 225px; left: 27px; }
+  }
+}
+
+@media (max-width: 1300px) { //@include lg
+
+
+}
+
+@media (max-width: 1100px) {//@include md
+
+}
+
+@media (max-width: 500px) {//@include sm
+
+}

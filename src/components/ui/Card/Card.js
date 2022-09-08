@@ -24,10 +24,10 @@ const Card = ({ coll, status, setLike, closeCard, elemSlider, name, location, co
     return (
         <div className="card">
             <div className="card__slider">
-                <img src={require('../../../img/pets-card-1.png')} alt='slide' className='card__img'/>
+                <img src={require('../../../img/ui/pets-card-1.png')} alt='slide' className='card__img'/>
                 <div className="card-slider">
                     <div className="card-slider__back" onClick={() => closeCard()}>
-                        <img src={require('../../../img/arrow-left.png')} alt="back" className="card-slider__img"/>
+                        <img src={require('../../../img/ui/arrow-left.png')} alt="back" className="card-slider__img"/>
                     </div>
                     <Swiper
                         modules={[Navigation, Pagination]}
@@ -36,6 +36,7 @@ const Card = ({ coll, status, setLike, closeCard, elemSlider, name, location, co
                             clickable: true,
                             dynamicBullets: true
                         }}
+
                         onSwiper={(swiper) => {
                             setTimeout(() => {
                                 swiper.params.navigation.prevEl = navigationPrevRef.current
@@ -47,6 +48,7 @@ const Card = ({ coll, status, setLike, closeCard, elemSlider, name, location, co
                                 swiper.navigation.update()
                             })
                         }}
+
                         navigation={{
                             prevEl: '.card-navigation .card-navigation_prev',
                             nextEl: '.card-navigation .card-navigation_next',
@@ -55,14 +57,14 @@ const Card = ({ coll, status, setLike, closeCard, elemSlider, name, location, co
                     >
                         {elemSlider.map(el => {
                             return <SwiperSlide>
-                                <img src={require(`../../../img/${el}`)} alt='slide' className='card-slider__slide'/>
+                                <img src={require(`../../../img/ui/${el}`)} alt='slide' className='card-slider__slide'/>
                             </SwiperSlide>
                         })}
                         <div ref={navigationPrevRef} className='card-navigation card-navigation_prev'>
-                            <img src={require(`../../../img/card-navigation.png`)} alt="navigation"/>
+                            <img src={require(`../../../img/ui/card-navigation.png`)} alt="navigation"/>
                         </div>
                         <div ref={navigationNextRef} className='card-navigation card-navigation_next'>
-                            <img src={require(`../../../img/card-navigation.png`)} alt="navigation"/>
+                            <img src={require(`../../../img/ui/card-navigation.png`)} alt="navigation"/>
                         </div>
                     </Swiper>
                 </div>
@@ -84,7 +86,7 @@ const Card = ({ coll, status, setLike, closeCard, elemSlider, name, location, co
                     <Like coll={coll} status={status} setLike={setLike}/>
                     {price ?
                         <div className="card-info__price">
-                            <img alt='price' src={require('../../../img/money.png')} className="card-info__icon"/>
+                            <img alt='price' src={require('../../../img/ui/money.png')} className="card-info__icon"/>
                             <h4 className="card-info__coll">{`${strPrice} ₽`}</h4>
                         </div>
                         :
