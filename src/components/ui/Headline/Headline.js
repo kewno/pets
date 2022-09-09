@@ -1,12 +1,17 @@
 import React from 'react';
 import './headline.scss';
+import { useSelector } from 'react-redux';
 import Notification from "../Notification/Notification";
 import ToggleTheme from "../ToggleTheme/ToggleTheme";
 import Avatar from "../Avatar/Avatar";
 import Icon from "../Icon/Icon";
 import PopUpMenu from "../PopUpMenu/PopUpMenu";
+import {setTheme} from "../../../redux/reducer";
 
 const Headline = ({setIsPopUp, isPopUp, active, setActive, headline = 'Home', ...attr}) => {
+    //setTheme
+    let theme = useSelector(store => store.reducer.theme)
+
     return (
         <div className="headline">
             <div className="headline__menu" onClick={() => setIsPopUp(true)}>
@@ -19,7 +24,7 @@ const Headline = ({setIsPopUp, isPopUp, active, setActive, headline = 'Home', ..
             <h1 className="headline__text">{headline}</h1>
             <div className="headline-info">
                 <div className="headline-info__toggle">
-                    <ToggleTheme active={active} setActive={setActive}/>
+                    <ToggleTheme active={theme} setTheme={setTheme}/>
                 </div>
                 <div className="headline-info__notification">
                     <Notification />

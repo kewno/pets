@@ -1,0 +1,20 @@
+.main {
+  height: 4000px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+
+  &__container {
+    background: var(--grey-2);
+    padding: 0 30px;
+  }
+
+  &__content {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 500px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}

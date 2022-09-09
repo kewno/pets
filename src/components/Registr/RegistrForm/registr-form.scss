@@ -1,0 +1,21 @@
+.regist-form {
+  &__input {
+    margin: 0 0 36px;
+
+    &:last-child {
+      border: 1px solid red;
+      margin: 0;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: auto;
+
+    .btn {
+      &__elem {
+        font-weight: 600;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    margin: 0 0 36px;
+
+    &:last-child {
+      border: 1px solid red;
+      margin: 0;
+    }
+  }
+
+  &__reestablish {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+    color: var(--light-gray);
+    display: inline-block;
+    margin: -20px 0 30px;
+    align-self: flex-end;
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: auto;
+
+    .btn {
+      &__elem {
+        font-weight: 600;
+      }
+    }
+  }
+}

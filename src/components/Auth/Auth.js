@@ -3,6 +3,7 @@ import './auth.scss'
 import Button from "../ui/Button/Button";
 import {NavLink} from "react-router-dom";
 import Input from "../ui/Input/Input";
+import AuthForm from "./AuthForm/AuthForm";
 
 const Auth = ({...attr}) => {
 
@@ -25,28 +26,29 @@ const Auth = ({...attr}) => {
                 </svg>
             </div>
 
+
             <h1 className="auth__headline">Вход</h1>
             <p className="auth__text">Войдите в систему сейчас, чтобы получить доступ к вашим питомцам</p>
 
-            <div className="auth__input">
-                <Input type={'text'} id='input-1' value={textOne} onChange={e => setTextOne(e.target.value)}>E-mail</Input>
-            </div>
+            <AuthForm/>
+            {/*<div className="auth__input">*/}
+            {/*    <Input type={'text'} id='input-1' value={textOne} onChange={e => setTextOne(e.target.value)}>E-mail</Input>*/}
+            {/*</div>*/}
 
-            <div className="auth__input">
-                <Input type={'text'} id='input-2' value={textTwo} onChange={e => setTextTwo(e.target.value)}>Пароль</Input>
-                {/*error={'Ошибка'}*/}
-            </div>
+            {/*<div className="auth__input">*/}
+            {/*    <Input type={'text'} id='input-2' error={'Ошибка'} value={textTwo} onChange={e => setTextTwo(e.target.value)}>Пароль</Input>*/}
+            {/*</div>*/}
 
-            <NavLink className="auth__reestablish" to={'/reg'}>Забыли пароль?</NavLink>
+            {/*<NavLink className="auth__reestablish" to={'/reg'}>Забыли пароль?</NavLink>*/}
 
-            <div className="auth__btn">
-                <Button
-                    href={'auth'}
-                >Войти</Button>
-            </div>
+            {/*<div className="auth__btn">*/}
+            {/*    <Button*/}
+            {/*        href={'auth'}*/}
+            {/*    >Войти</Button>*/}
+            {/*</div>*/}
 
             <p className="auth__description">У вас ещё нет аккаунта?</p>
-            <NavLink className="auth__href" to={'/reg'}>Зарегистрироваться</NavLink>
+            <NavLink className="auth__href" to={'/registr'}>Зарегистрироваться</NavLink>
         </div>
     )
 }

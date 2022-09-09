@@ -2,21 +2,29 @@ import React from "react";
 import './identification.scss'
 import Auth from "../Auth/Auth";
 import Registr from "../Registr/Registr";
-import {useParams} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 
 const Identification = ({...attr}) => {
 
     // open auth/registr
-    let params = useParams();
-    let identification = params.ident;
+    let params = useLocation();
+    //debugger
+    //console.log(params.pathname.indexOf('registr'))
+    let reg = params.pathname.indexOf('registr');
+
+    function getRandom(max) {
+        return Math.floor(Math.random() * max);
+    }
+
+    let numberImage = getRandom(4);
 
     return (
         <div className="identification">
             <div className="identification-images">
-                <img src={require('../../img/identification/identification-1.png')} alt="background" className="identification-images__img"/>
+                <img src={require(`../../img/identification/identification-${numberImage}.png`)} alt="background" className="identification-images__img"/>
             </div>
             <div className="identification__content">
-                {identification === 'registr' ?
+                {reg === 1 ?
                     <Registr />
                     :
                     <Auth />

@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import './registr.scss'
-import Button from "../ui/Button/Button";
 import {NavLink} from "react-router-dom";
-import Input from "../ui/Input/Input";
+import RegistrForm from "./RegistrForm/RegistrForm";
 
 const Registr = ({...attr}) => {
 
@@ -28,27 +27,28 @@ const Registr = ({...attr}) => {
             <h1 className="registr__headline">Регистрация</h1>
             <p className="registr__text">Зарегистрируйтесь сейчас бесплатно и добавьте своего питомца</p>
 
-            <div className="registr__input">
-                <Input type={'text'} id='input-1' value={textOne} onChange={e => setTextOne(e.target.value)}>Имя</Input>
-            </div>
+            <RegistrForm />
+            {/*<div className="registr__input">*/}
+            {/*    <Input type={'text'} id='input-1' value={textOne} onChange={e => setTextOne(e.target.value)}>Имя</Input>*/}
+            {/*</div>*/}
 
-            <div className="registr__input">
-                <Input type={'text'} id='input-2' value={textTwo} onChange={e => setTextTwo(e.target.value)}>E-mail</Input>
-                {/*error={'Ошибка'}*/}
-            </div>
+            {/*<div className="registr__input">*/}
+            {/*    <Input type={'text'} id='input-2' value={textTwo} onChange={e => setTextTwo(e.target.value)}>E-mail</Input>*/}
+            {/*    /!*error={'Ошибка'}*!/*/}
+            {/*</div>*/}
 
-            <div className="registr__input">
-                <Input type={'text'} id='input-3' value={textOne} onChange={e => setTextOne(e.target.value)}>Пароль</Input>
-            </div>
+            {/*<div className="registr__input">*/}
+            {/*    <Input type={'text'} id='input-3' value={textOne} onChange={e => setTextOne(e.target.value)}>Пароль</Input>*/}
+            {/*</div>*/}
 
-            <div className="registr__btn">
-                <Button
-                    href={'auth'}
-                >Зарегистрироваться</Button>
-            </div>
+            {/*<div className="registr__btn">*/}
+            {/*    <Button*/}
+            {/*        href={'auth'}*/}
+            {/*    >Зарегистрироваться</Button>*/}
+            {/*</div>*/}
 
             <p className="registr__description">Уже есть аккаунт?</p>
-            <NavLink className="registr__href" to={'/reg'}>Войти</NavLink>
+            <NavLink className="registr__href" to={'/auth'}>Войти</NavLink>
         </div>
     )
 }

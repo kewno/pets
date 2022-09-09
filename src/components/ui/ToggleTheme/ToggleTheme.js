@@ -1,16 +1,23 @@
 import React from 'react';
 import './toggle-theme.scss';
+import {useDispatch} from "react-redux";
 
-const ToggleTheme = ({active, setActive, ...attr}) => {
-    //debugger
+const ToggleTheme = ({active, setTheme, ...attr}) => {
+
+    let dispatch = useDispatch()
+
+    let handleClick = (theme) => {
+        dispatch(setTheme(theme))
+    }
+
     return (
         <div className='toggle-theme'>
-            <div className={`toggle-theme__elem ${active === 'dark' ? 'toggle-theme__elem_active' : null}`} onClick={() => {setActive('dark')}}>
+            <div className={`toggle-theme__elem ${active === 'dark' ? 'toggle-theme__elem_active' : null}`} onClick={() => {handleClick('dark')}}>
                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.75431 10.7333C2.06542 15.1839 5.84196 18.8049 10.3617 19.0037C13.5506 19.1419 16.4025 17.6555 18.1136 15.3136C18.8222 14.3543 18.442 13.7148 17.258 13.9308C16.679 14.0345 16.0827 14.0777 15.4605 14.0518C11.2346 13.879 7.77776 10.3444 7.76048 6.17034C7.75184 5.04689 7.98517 3.98392 8.40863 3.01602C8.87529 1.94442 8.31357 1.43454 7.23332 1.89257C3.8111 3.33578 1.46912 6.78392 1.75431 10.7333Z" stroke="white" strokeWidth="1.48148" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             </div>
-            <div className={`toggle-theme__elem ${active === 'light' ? 'toggle-theme__elem_active' : null}`} onClick={() => {setActive('light')}}>
+            <div className={`toggle-theme__elem ${active === 'light' ? 'toggle-theme__elem_active' : null}`} onClick={() => {handleClick('light')}}>
                 <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.8334 4.12109C7.39219 4.12109 4.59082 6.78906 4.59082 10.0664C4.59082 13.3438 7.39219 16.0117 10.8334 16.0117C14.2746 16.0117 17.076 13.3438 17.076 10.0664C17.076 6.78516 14.2746 4.12109 10.8334 4.12109ZM10.8334 14.4141C8.31504 14.4141 6.26426 12.4609 6.26426 10.0625C6.26426 7.66406 8.31504 5.71094 10.8334 5.71094C13.3518 5.71094 15.4025 7.66406 15.4025 10.0625C15.4025 12.4609 13.3518 14.4141 10.8334 14.4141Z" fill="#CED7E0"/>
                     <path d="M10.8334 2.92188C11.2969 2.92188 11.6701 2.56641 11.6701 2.125V1.22656C11.6701 0.785156 11.2969 0.429688 10.8334 0.429688C10.3699 0.429688 9.9967 0.785156 9.9967 1.22656V2.125C9.9967 2.56641 10.3699 2.92188 10.8334 2.92188Z" fill="#CED7E0"/>
@@ -26,5 +33,5 @@ const ToggleTheme = ({active, setActive, ...attr}) => {
         </div>
     )
 }
-// onClick={() => {setActive('light')}}
+
 export default ToggleTheme

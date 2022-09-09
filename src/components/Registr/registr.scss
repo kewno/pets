@@ -27,40 +27,9 @@
     font-size: 18px;
     line-height: 150%;
     color: var(--light-gray);
-    //letter-spacing: 0.04em;
   }
 
-  &__input {
-    margin: 0 0 36px;
 
-    &:last-child {
-      border: 1px solid red;
-      margin: 0;
-    }
-  }
-
-  &__reestablish {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    text-decoration: none;
-    color: var(--light-gray);
-    display: inline-block;
-    margin: -12px 0 30px auto;
-    //10px 0 30px auto   24px 0 30px auto
-  }
-
-  &__btn {
-    width: 100%;
-    margin-top: auto;
-
-    .btn {
-      &__elem {
-        font-weight: 600;
-      }
-    }
-  }
 
   &__description {
     text-align: center;
