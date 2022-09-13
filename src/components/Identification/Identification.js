@@ -8,8 +8,6 @@ const Identification = ({...attr}) => {
 
     // open auth/registr
     let params = useLocation();
-    //debugger
-    //console.log(params.pathname.indexOf('registr'))
     let reg = params.pathname.indexOf('registr');
 
     function getRandom(max) {
