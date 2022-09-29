@@ -5,13 +5,18 @@ import Button from "../Button/Button";
 import Like from "../Like/Like";
 import {Navigation, Pagination} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
+import SimpleBar from "simplebar-react";
+import "simplebar/src/simplebar.css";
+import {NavLink} from "react-router-dom";
 
-const Card = ({ coll, status, setLike, closeCard, elemSlider, name, location, country, breed, animal, howOld, weight, gender, description, price, ...attr}) => {
+
+const Card = ({id, closeCard, elemSlider, name, location, country, breed, animal, howOld, weight, gender, description, price, ...attr}) => {
     const navigationPrevRef = React.useRef(null)
     const navigationNextRef = React.useRef(null)
 
 
     let strPrice;
+    let key = 1;
 
     if (price.length > 0 && price.length < 4) {
         strPrice = price;
@@ -26,9 +31,12 @@ const Card = ({ coll, status, setLike, closeCard, elemSlider, name, location, co
             <div className="card__slider">
                 <img src={require('../../../img/ui/pets-card-1.png')} alt='slide' className='card__img'/>
                 <div className="card-slider">
-                    <div className="card-slider__back" onClick={() => closeCard()}>
+                    <NavLink to={'/pets'} className="card-slider__back">
                         <img src={require('../../../img/ui/arrow-left.png')} alt="back" className="card-slider__img"/>
-                    </div>
+                    </NavLink>
+                    {/*<div className="card-slider__back" onClick={() => closeCard()}>*/}
+                    {/*    <img src={require('../../../img/ui/arrow-left.png')} alt="back" className="card-slider__img"/>*/}
+                    {/*</div>*/}
                     <Swiper
                         modules={[Navigation, Pagination]}
                         slidesPerView={1}
@@ -56,7 +64,7 @@ const Card = ({ coll, status, setLike, closeCard, elemSlider, name, location, co
 
                     >
                         {elemSlider.map(el => {
-                            return <SwiperSlide>
+                            return <SwiperSlide key={key++}>
                                 <img src={require(`../../../img/ui/${el}`)} alt='slide' className='card-slider__slide'/>
                             </SwiperSlide>
                         })}
@@ -69,6 +77,7 @@ const Card = ({ coll, status, setLike, closeCard, elemSlider, name, location, co
                     </Swiper>
                 </div>
             </div>
+
             <div className="card-info">
                 <div className="card-info__head">
                     <h2 className="card-info__nick">{`${name},`}</h2>
@@ -83,7 +92,7 @@ const Card = ({ coll, status, setLike, closeCard, elemSlider, name, location, co
                 </div>
 
                 <div className="card-info__like">
-                    <Like coll={coll} status={status} setLike={setLike}/>
+                    <Like id={id}/>
                     {price ?
                         <div className="card-info__price">
                             <img alt='price' src={require('../../../img/ui/money.png')} className="card-info__icon"/>
@@ -111,7 +120,10 @@ const Card = ({ coll, status, setLike, closeCard, elemSlider, name, location, co
 
                 <div className="card-description">
                     <h3 className="card-description__headline">Описание</h3>
-                    <p className="card-description__text">{description}</p>
+                    <SimpleBar forceVisible="y" autoHide={true}>
+                        <p className="card-description__text">{description}</p>
+                    </SimpleBar>
+
                 </div>
                 <div className="card-btn">
                     <Button href='/'>{price ? `Купить - ${strPrice} ₽` : 'Приютить'}</Button>

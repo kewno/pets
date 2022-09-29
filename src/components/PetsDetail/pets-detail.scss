@@ -1,0 +1,29 @@
+//.pets-detail {
+//  &__content {
+//    display: inherit;
+//  }
+//}
+
+
+@media (max-width: 800px) {
+  .pets-detail {
+    grid-template-columns: 1fr;
+
+    &__container {
+      padding: 0 0 15px 0;
+    }
+
+    &__content {
+      padding: 0;
+    }
+
+    .sidebar {
+      display: none;
+    }
+
+    .headline {
+      display: none;
+    }
+  }
+}
+

@@ -1,7 +1,3 @@
-//\:root
-//    --white-liht: #EDF2F7
-//    --blue: #4C6FFF
-
 @mixin xl-max {
   @media screen and (max-width: 1940px) {
     @content;

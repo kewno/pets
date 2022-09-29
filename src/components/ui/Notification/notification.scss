@@ -12,6 +12,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--primary-light);
+
+    svg {
+      * {
+        stroke: currentColor;
+      }
+    }
   }
 
   &__point {

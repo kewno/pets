@@ -5,7 +5,7 @@ const SplashScreen = ({Component, ...attr}) => {
     let [loader, setLoader] = useState(false)
 
     useEffect(() => {
-        setTimeout(() => setLoader(true),3000)
+        setTimeout(() => setLoader(true),2000)
     }, [])
 
     return (

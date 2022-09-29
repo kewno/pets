@@ -30,7 +30,7 @@ const Start = ({...attr}) => {
                 </div>
 
                 <p className="start__description">У вас ещё нет аккаунта?</p>
-                <NavLink className="start__href" to={'/reg'}>Зарегистрироваться</NavLink>
+                <NavLink className="start__href" to={'/registr'}>Зарегистрироваться</NavLink>
             </div>
 
         </div>

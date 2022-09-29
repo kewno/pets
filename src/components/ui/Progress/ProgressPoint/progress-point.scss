@@ -1,0 +1,24 @@
+.progress-point {
+  width: 15px;
+  height: 15.49px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+
+  &_cancellation {
+    background: var(--danger);
+  }
+
+  &_completed {
+    background: var(--success);
+  }
+
+  &_completed-partially {
+    background: var(--yellow);
+  }
+
+  &_performed {
+    background:var(--blue);
+  }
+}

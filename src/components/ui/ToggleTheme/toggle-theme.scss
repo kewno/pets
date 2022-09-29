@@ -27,6 +27,12 @@
       justify-content: center;
       box-sizing: border-box;
     }
+
+    &_night {
+      svg {
+        stroke: var(--toggle-night);
+      }
+    }
   }
 }
 

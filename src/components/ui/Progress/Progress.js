@@ -1,32 +1,99 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './progress.scss';
+import ProgressPoint from "./ProgressPoint/ProgressPoint";
 
 
-const Progress = ({headline, headProgress, percent = 69, ...attr}) => {
+const Progress = ({headline, headProgress, circles, ...attr}) => {
+
+    const [size, setSize] = useState({});
+    const [percent, setPercent] = useState();
+    const ref = useRef()
+
+    let resizeHandler = () => {
+        const { clientHeight, clientWidth } = ref.current || {};
+        setSize({ clientHeight, clientWidth });
+    }
+
+    useEffect(() => {
+        window.addEventListener("resize", resizeHandler);
+        resizeHandler();
+        return () => {
+            window.removeEventListener("resize", resizeHandler);
+        };
+    }, [])
+
+    useEffect(() => {
+        if (size.clientWidth === 254) {
+            //percent = 735 / 100
+            setPercent(735 / 100)
+        } else if (size.clientWidth === 230) {
+            //percent = 660 / 100
+            setPercent(660 / 100)
+        } else if (size.clientWidth === 305) {
+            //percent = 798 / 100
+            setPercent(880 / 100)
+        } else if (size.clientWidth === 105) {
+            //percent = 299 / 100;
+            setPercent(299 / 100)
+        }
+
+        //console.log(percent)
+    }, [size])
+
+    let percentAll = 0;
+    circles.forEach((el) => {
+        percentAll+= el.percent
+    })
+
+    let firstCircle = circles[0].percent * percent
+    let secondCircle = circles[1].percent * percent
+    let thirdCircle = circles[2].percent * percent
+    let fourthCircle = circles[3].percent * percent
+
+
     return (
         <div className='progress'>
             <div className='progress-ellipse'>
-                <p className='progress-ellipse__percent'>{`${percent}%`}</p>
-                <svg width="254" height="254" viewBox="0 0 254 254" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="127" cy="127" r="117" stroke="#334155" strokeWidth="20"/>
-                    <path d="M209.731 209.731C198.867 220.596 185.969 229.214 171.774 235.094C157.579 240.974 142.365 244 127 244C111.635 244 96.4209 240.974 82.2258 235.094C68.0307 229.214 55.1327 220.596 44.2683 209.731" stroke="#F16063" strokeWidth="20" strokeLinecap="round"/>
-                    <path d="M244 127C244 142.365 240.974 157.579 235.094 171.774C229.214 185.969 220.596 198.867 209.731 209.731" stroke="url(#paint0_linear_3601_1837)" strokeWidth="20" strokeLinecap="round"/>
-                    <path d="M127 10C142.365 10 157.579 13.0263 171.774 18.9061C185.969 24.7859 198.867 33.4041 209.732 44.2685C220.596 55.133 229.214 68.031 235.094 82.2261C240.974 96.4211 244 111.635 244 127" stroke="#66CB9F" strokeWidth="20" strokeLinecap="round"/>
-                    <defs>
-                        <linearGradient id="paint0_linear_3601_1837" x1="244" y1="10" x2="10" y2="244" gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#FFEF5E"/>
-                            <stop offset="1" stopColor="#F7936F"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
+                <p className='progress-ellipse__percent'>{`${percentAll}%`}</p>
+                <svg ref={ref} className='svg-circle' width='254' height='254' >
+                    <circle className='svg-circle__main svg-circle__circle' cy='127' cx='127' r='117' fill='transparent' strokeWidth="20"></circle>
+                    {firstCircle ?
+                        <circle className={`svg-circle__circle svg-circle_${circles[0].className}`} cy='127' cx='127' r='117' fill='transparent' stroke="orange" strokeWidth="20" strokeDashoffset='0' strokeDasharray={`${firstCircle}, 1000`}></circle>
+                    :
+                        null
+                    }
+                    {secondCircle ?
+                        <circle className={`svg-circle__circle svg-circle_${circles[1].className}`} cy='127' cx='127' r='117' fill='transparent' stroke="blue" strokeWidth="20" strokeDashoffset={`${-firstCircle}`} strokeDasharray={`${secondCircle}, 1000`}></circle>
+                        :
+                        null
+                    }
+                    {thirdCircle ?
+                        <circle className={`svg-circle__circle svg-circle_${circles[2].className}`} cy='127' cx='127' r='117' fill='transparent' stroke="green" strokeWidth="20" strokeDashoffset={`${-firstCircle-secondCircle}`} strokeDasharray={`${thirdCircle}, 1000`}></circle>
+                        :
+                        null
+                    }
+                    {fourthCircle ?
+                        <circle className={`svg-circle__circle svg-circle_${circles[3].className}`} cy='127' cx='127' r='117' fill='transparent' stroke="red" strokeWidth="20" strokeDashoffset={`${-firstCircle-secondCircle-thirdCircle}`} strokeDasharray={`${fourthCircle}, 1000`}></circle>
+                        :
+                        null
+                    }
+                    </svg>
 
             </div>
             <div className='progress-head'>
                 <h2 className='progress-head__headline'>{headline}</h2>
-                {headProgress.map(el => {
+                {/*{headProgress.map(el => {*/}
+                {/*    return <div className='progress-head__elem'>*/}
+                {/*        /!*<img alt='point' src={require(`../../../img/ui/${el.img}`)} className='progress-head__img'/>*!/*/}
+                {/*        <ProgressPoint key={el.id} img={el.icon} className={el.className} />*/}
+                {/*        <p className='progress-head__text'>{el.text}</p>*/}
+                {/*    </div>*/}
+                {/*})}*/}
+                {circles.map(el => {
                     return <div className='progress-head__elem'>
-                        <img alt='point' src={require(`../../../img/ui/${el.img}`)} className='progress-head__img'/>
-                        <p className='progress-head__text'>{el.text}</p>
+                        {/*<img alt='point' src={require(`../../../img/ui/${el.img}`)} className='progress-head__img'/>*/}
+                        <ProgressPoint key={el.id} className={el.className} />
+                        <p className='progress-head__text'>{el.headline}</p>
                     </div>
                 })}
             </div>

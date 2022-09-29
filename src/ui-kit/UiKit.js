@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Button from "../components/ui/Button/Button";
 import './ui-kit.scss';
 import Input from "../components/ui/Input/Input";
@@ -19,16 +19,28 @@ import Notification from "../components/ui/Notification/Notification";
 import Sidebar from "../components/ui/Sidebar/Sidebar";
 import Headline from "../components/ui/Headline/Headline";
 import PopUpMenu from "../components/ui/PopUpMenu/PopUpMenu";
+import {useSelector} from "react-redux";
 
 const UiKit = () => {
     let [textOne, setTextOne] = useState('');
     let [textTwo, setTextTwo] = useState('');
     let [textThree, setTextThree] = useState('');
-    let [statusToggle, setStatusToggle] = useState('dark');
+    //let [statusToggle, setStatusToggle] = useState('dark');
     let [like, setLike] = useState(false);
 
     let [isPopUp, setIsPopUp] = useState(false); //true
-    //img, name='Bob' rank='Котенок'
+
+    let [seconds, setSeconds] = useState(new Date().toLocaleTimeString()); //new Date().toLocaleTimeString()
+    let [date, setDate] = useState(new Date().toLocaleDateString());
+
+    let theme = useSelector(store => store.reducer.theme)
+
+    useEffect(() => {
+
+    })
+
+    let arrTime = seconds.split(':');
+
     return (
         <div className='ui-kit'>
             <div className='ui-kit-page'>
@@ -38,18 +50,27 @@ const UiKit = () => {
                         headline={'Котики'}
                         isPopUp={isPopUp}
                         setIsPopUp={setIsPopUp}
-                        active={statusToggle}
-                        setActive={setStatusToggle} />
+                    />
+
+                    <svg className='svg' width='200' height='200'>
+                        <circle cy='100' cx='100' r='80' fill='transparent' stroke="black" strokeWidth="20"></circle>
+                        <circle cy='100' cx='100' r='80' fill='transparent' stroke="orange" strokeWidth="20" strokeDashoffset='0' strokeDasharray="100, 1000"></circle>
+                        <circle cy='100' cx='100' r='80' fill='transparent' stroke="blue" strokeWidth="10" strokeDashoffset='-100' strokeDasharray="200, 1000"></circle>
+                        <circle cy='100' cx='100' r='80' fill='transparent' stroke="white" strokeWidth="5" strokeDashoffset='-300' strokeDasharray="200, 1000"></circle>
+                        {/*<circle className='circle2' cy='100' cx='100' r='80' fill='transparent' stroke="blue" stroke-width="20" ></circle>  /!*stroke-dasharray="60%,1000"  stroke-dashoffset='0'*!/*/}
+                        {/*<circle className='first' cy='100' cx='100' r='80' fill='transparent' stroke="orange" strokeDasharray="20%,1000" strokeWidth="10" strokeDashoffset='0'></circle>*/}
+                        {/*<circle cy='100' cx='100' r='80' fill='transparent' stroke="blue" stroke-width="12" stroke-dasharray="50" strokeDasharray="0" stroke-dashoffset='30'></circle>*/}
+                    </svg>
 
                     <Notification />
 
                     <Progress
                         headline='Ежедневный прогресс'
                         headProgress={[
-                            {text: 'Прогулка в парке', img: 'head-progress-1.png'},
-                            {text: 'Обед', img: 'head-progress-2.png'},
-                            {text: 'Перекус 1/2', img: 'head-progress-3.png'},
-                            {text: 'Игры', img: 'head-progress-4.png'}
+                            {id: 1, icon: null, className: 'progress-point_red', percent: 20, text: 'Прогулка в парке', img: 'head-progress-1.png'},
+                            {id: 1, icon: true, className: 'progress-point_green', percent: 30, text: 'Обед', img: 'head-progress-2.png'},
+                            {id: 1, icon: false, className: 'progress-point_yellow', percent: 40, text: 'Перекус 1/2', img: 'head-progress-3.png'},
+                            {id: 1, icon: null, className: 'progress-point_blue', percent: 10, text: 'Игры', img: 'head-progress-4.png'}
                         ]}
                     />
 
@@ -57,7 +78,6 @@ const UiKit = () => {
                         coll='169'
                         status={like}
                         setLike={setLike}
-                        //'pets-card-1.png', 'pets-card-1.png', 'pets-card-1.png', 'pets-card-1.png'       'pats-card-slide-1.png', 'pats-card-slide-1.png', 'pats-card-slide-1.png', 'pats-card-slide-1.png'
                         elemSlider={['pets-card-1.png', 'pets-card-1.png', 'pets-card-1.png', 'pets-card-1.png']}
                         name='Локи'
                         location='<svg width="46" height="64" viewBox="0 0 46 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,14 +102,14 @@ const UiKit = () => {
                         howOld='2'
                         weight='2'
                         gender='Мужской'
-                        description='Кот Локи больше не просит есть. Он просто сидит напротив и смотрит на меня так, будто ждет, что я подам ему еду. Как-то ночью я проснулся от того, что почувствовал, что рядом кто-то есть. Я повернулся, чтобы увидеть, кто это, но там никого не было. Мне было страшно.'
+                        description='Кот Локи больше не просит есть. Кот Локи больше не просит есть. Он просто сидит напротив бла бла бла и прочеая болтавня и смотрит на меня так, будто ждет. Он просто сидит напротив бла бла бла и прочеая болтавня и смотрит на меня так, будто ждет, что я подам ему еду. Как-то ночью я проснулся от того, что почувствовал, что рядом кто-то есть. Я повернулся, чтобы увидеть, кто это, но там никого не было. Мне было страшно.'
                         price='5000'
                     />
 
                     <Statistics
                         name='Johny'
                         like='3'
-                        elemSlider={['slide-1.png', 'slide-1.png', 'slide-1.png']}
+                        images={['slide-1.png', 'slide-1.png', 'slide-1.png']}
                     />
                 </div>
             </div>
@@ -141,13 +161,15 @@ const UiKit = () => {
             <div className='ui-kit-post'>
                 <Post img='post-1.png' name='Bob' rank='Котенок' status={like} setLike={setLike} coll='327'/>
             </div>
+            <Post img='post-2.png' name='Bob' rank='Котенок' status={like} setLike={setLike} coll='327'/>
 
             <div className='ui-kit-like'>
                 <Like coll='327' status={like} setLike={setLike}/>
             </div>
 
             <div className='ui-kit-toggle'>
-                <ToggleTheme active={statusToggle} setActive={setStatusToggle}/>
+                <ToggleTheme active={theme}/>
+                {/*active={statusToggle} setActive={setStatusToggle}*/}
             </div>
 
             <div className='ui-kit-views'>
@@ -168,17 +190,17 @@ const UiKit = () => {
 
             <div className='ui-kit-icons-date-time'>
                 <div className='ui-kit-icons-date-time__elem'>
-                    <DateTime headline='3:46' text='На часах у нас' icon='<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#EDF2F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M11 5V11L15 13" stroke="#EDF2F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <DateTime headline={`${arrTime[0]}:${arrTime[1]}`} text='На часах у нас' icon='<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#EDF2F7" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+                        <path d="M11 5V11L15 13" stroke="#EDF2F7" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
                         </svg>'/>
                 </div>
                 <div className='ui-kit-icons-date-time__elem'>
-                    <DateTime headline='05.10.2021' text='На календаре у нас' icon='<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.8333 3.33325H4.16667C3.24619 3.33325 2.5 4.07944 2.5 4.99992V16.6666C2.5 17.5871 3.24619 18.3333 4.16667 18.3333H15.8333C16.7538 18.3333 17.5 17.5871 17.5 16.6666V4.99992C17.5 4.07944 16.7538 3.33325 15.8333 3.33325Z" stroke="#EDF2F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13.3334 1.66675V5.00008" stroke="#EDF2F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M6.66663 1.66675V5.00008" stroke="#EDF2F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2.5 8.33325H17.5" stroke="#EDF2F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <DateTime headline={date} text='На календаре у нас' icon='<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.8333 3.33325H4.16667C3.24619 3.33325 2.5 4.07944 2.5 4.99992V16.6666C2.5 17.5871 3.24619 18.3333 4.16667 18.3333H15.8333C16.7538 18.3333 17.5 17.5871 17.5 16.6666V4.99992C17.5 4.07944 16.7538 3.33325 15.8333 3.33325Z" stroke="#EDF2F7" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+                        <path d="M13.3334 1.66675V5.00008" stroke="#EDF2F7" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+                        <path d="M6.66663 1.66675V5.00008" stroke="#EDF2F7" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+                        <path d="M2.5 8.33325H17.5" stroke="#EDF2F7" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
                         </svg>'/>
                 </div>
             </div>
@@ -263,7 +285,7 @@ const UiKit = () => {
             {/*                    id: 4,*/}
             {/*                    href: '/ui-kit/4',*/}
             {/*                    icon: '<svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +*/}
-            {/*                        '<path d="M3.37032 20.9012C3.32039 21.0716 3.36463 21.2557 3.48653 21.3849C3.60843 21.5141 3.78971 21.5689 3.96275 21.5289C6.09469 21.0361 7.41062 20.4613 8.02723 20.1488L7.80122 19.7028L8.02724 20.1488C8.24704 20.0374 8.50023 20.0111 8.73824 20.0749C9.7672 20.3508 10.8624 20.5 12 20.5C18.2078 20.5 23 16.1228 23 11C23 5.87721 18.2078 1.5 12 1.5C5.79222 1.5 1 5.87721 1 11C1 13.3484 1.98872 15.5152 3.66278 17.194C3.87317 17.405 3.97852 17.6988 3.95013 17.9954C3.85826 18.9549 3.64571 19.961 3.37032 20.9012ZM3.18013 22.2079L3.27734 22.6984L3.18013 22.2079L3.15027 22.2138C3.01474 22.2406 2.87654 22.2669 2.73565 22.2927C2.60412 22.3167 2.47026 22.3404 2.33402 22.3636C2.38812 22.2307 2.44145 22.0941 2.49375 21.9543C2.54226 21.8246 2.58991 21.6922 2.63648 21.5574L2.63649 21.5573L2.64249 21.5399C2.6425 21.5399 2.6425 21.5399 2.6425 21.5399C3.02392 20.4318 3.33713 19.1518 3.4524 17.9478C3.4666 17.7994 3.41393 17.6525 3.30873 17.547C1.55171 15.7851 0.5 13.4949 0.5 11C0.5 5.53778 5.58392 1 12 1C18.4161 1 23.5 5.53778 23.5 11C23.5 16.4622 18.4161 21 12 21C10.8186 21 9.67991 20.8451 8.60875 20.5579C8.48974 20.526 8.36315 20.5391 8.25325 20.5948C7.51462 20.9691 5.8794 21.6729 3.18013 22.2079Z" stroke="#EDF2F7" stroke-linecap="round" stroke-linejoin="round"/>\n' +*/}
+            {/*                        '<path d="M3.37032 20.9012C3.32039 21.0716 3.36463 21.2557 3.48653 21.3849C3.60843 21.5141 3.78971 21.5689 3.96275 21.5289C6.09469 21.0361 7.41062 20.4613 8.02723 20.1488L7.80122 19.7028L8.02724 20.1488C8.24704 20.0374 8.50023 20.0111 8.73824 20.0749C9.7672 20.3508 10.8624 20.5 12 20.5C18.2078 20.5 23 16.1228 23 11C23 5.87721 18.2078 1.5 12 1.5C5.79222 1.5 1 5.87721 1 11C1 13.3484 1.98872 15.5152 3.66278 17.194C3.87317 17.405 3.97852 17.6988 3.95013 17.9954C3.85826 18.9549 3.64571 19.961 3.37032 20.9012ZM3.18013 22.2079L3.27734 22.6984L3.18013 22.2079L3.15027 22.2138C3.01474 22.2406 2.87654 22.2669 2.73565 22.2927C2.60412 22.3167 2.47026 22.3404 2.33402 22.3636C2.38812 22.2307 2.44145 22.0941 2.49375 21.9543C2.54226 21.8246 2.58991 21.6922 2.63648 21.5574L2.63649 21.5573L2.64249 21.5399C2.6425 21.5399 2.6425 21.5399 2.6425 21.5399C3.02392 20.4318 3.33713 19.1518 3.4524 17.9478C3.4666 17.7994 3.41393 17.6525 3.30873 17.547C1.55171 15.7851 0.5 13.4949 0.5 11C0.5 5.53778 5.58392 1 12 1C18.4161 1 23.5 5.53778 23.5 11C23.5 16.4622 18.4161 21 12 21C10.8186 21 9.67991 20.8451 8.60875 20.5579C8.48974 20.526 8.36315 20.5391 8.25325 20.5948C7.51462 20.9691 5.8794 21.6729 3.18013 22.2079Z" stroke="#EDF2F7" stroke-linecap="round" strokeLinejoin="round"/>\n' +*/}
             {/*                        '</svg>'*/}
             {/*                },*/}
             {/*                {*/}

@@ -16,10 +16,27 @@
 
   &__href {
     margin: 0 0 80px;
+
+    svg {
+      path {
+        fill: var(--primary-light);
+
+        &.svg-item {
+          fill: var(--reverse-primary);
+        }
+      }
+    }
+
   }
 
   &__logout {
     margin-top: auto;
+
+    svg {
+      path {
+        fill: var(--primary-light);
+      }
+    }
   }
 }
 

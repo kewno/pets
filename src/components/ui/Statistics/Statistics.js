@@ -11,7 +11,7 @@ import 'swiper/css/scrollbar';
 import Views from "../Views/Views";
 
 
-const Statistics = ({elemSlider, name, like, ...attr}) => {
+const Statistics = ({elemSlider, name, like, images, ...attr}) => {
     const navigationPrevRef = React.useRef(null)
     const navigationNextRef = React.useRef(null)
 
@@ -40,7 +40,7 @@ const Statistics = ({elemSlider, name, like, ...attr}) => {
                         }}
 
                     >
-                        {elemSlider.map(el => {
+                        {images.map(el => {
                             return <SwiperSlide>
                                 <img src={require(`../../../img/ui/${el}`)} alt='slide' className='pets-slider-slide-img'/>
                             </SwiperSlide>
@@ -74,12 +74,12 @@ const Statistics = ({elemSlider, name, like, ...attr}) => {
                 </div>
                 <div className="statistics-elems">
                     <Views like='60' views='120' number='17' day='ПН'/>
-                    <Views like='60' views='120' number='18' day='ВТ'/>
-                    <Views like='60' views='120' number='19' day='СР'/>
-                    <Views like='60' views='120' number='20' day='ЧТ'/>
-                    <Views like='60' views='120' number='21' day='ПТ'/>
-                    <Views like='60' views='120' number='22' day='СБ'/>
-                    <Views like='60' views='120' number='23' day='ВС'/>
+                    <Views like='160' views='120' number='18' day='ВТ'/>
+                    <Views like='100' views='120' number='19' day='СР'/>
+                    <Views like='80' views='120' number='20' day='ЧТ'/>
+                    <Views like='310' views='600' number='21' day='ПТ'/>
+                    <Views like='100' views='120' number='22' day='СБ'/>
+                    <Views like='2400' views='10000' number='23' day='ВС'/>
                 </div>
             </div>
         </div>

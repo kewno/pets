@@ -1,21 +1,35 @@
 import React from 'react';
 import './pets-elem.scss';
+import {setTogglePets} from "../../../../redux/reducerTogglePets";
+import {useDispatch} from "react-redux";
 import {NavLink} from "react-router-dom";
 
-const PetsElem = ({name, href, img, ...attr}) => {
+const PetsElem = ({name, id, img, href, ...attr}) => {
+
+    let dispatch = useDispatch()
+
+    let handleClick = (id) => {
+        dispatch(setTogglePets(id))
+    }
+
     return (
-        <NavLink to={href} className='pets-elem'>
-            <div className='pets-elem__wrap-img'>
-                <div className='pets-elem__img' dangerouslySetInnerHTML={{ __html: img }} />
-            </div>
-            <p className='pets-elem__name'>{name}</p>
-        </NavLink>
-        // <NavLink to={href} className='menu-pets-elem'>
-        //     <div className='menu-pets-elem-img'>
-        //         <div className='menu-pets-elem-img__img' dangerouslySetInnerHTML={{ __html: img }} />
+        // <NavLink to={id} className='pets-elem' onClick={() => handleClick(id)}>
+        //     <div className='pets-elem__wrap-img'>
+        //         <div className='pets-elem__img' dangerouslySetInnerHTML={{ __html: img }} />
         //     </div>
-        //     <p className='menu-pets-elem__name'>{name}</p>
+        //     <p className='pets-elem__name'>{name}</p>
         // </NavLink>
+        <div >
+            <label className={'pets-elems'} >
+                <input type='checkbox' id={id} onClick={() => handleClick(id)}/>
+                <div className='pets-elem' >
+                    <div className='pets-elem__wrap-img'>
+                        <div className='pets-elem__img' dangerouslySetInnerHTML={{ __html: img }} />
+                    </div>
+                    <p className='pets-elem__name'>{name}</p>
+                </div>
+            </label>
+        </div>
     )
 }
 

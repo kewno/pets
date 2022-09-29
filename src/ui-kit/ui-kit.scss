@@ -83,3 +83,21 @@
     }
   }
 }
+
+
+.circle1 {
+
+}
+
+.circle2 {
+  display: none;
+  //stroke-dasharray: 564px;
+  //stroke-dashoffset: 450px;
+  //transform: rotate(-90deg) translateX(-200px);
+}
+
+.svg {
+  circle {
+    border-radius: 50px;
+  }
+}

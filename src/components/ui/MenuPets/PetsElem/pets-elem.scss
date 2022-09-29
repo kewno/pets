@@ -1,4 +1,17 @@
 .pets-elem {
+  //padding: 0 15px 0 0;
+  box-sizing: border-box;
+}
+
+input:checked + .pets-elem {
+  background: var(--blue);
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.pets-elem {
   width: 73px;
   height: 73px;
   display: flex;

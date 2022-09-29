@@ -1,11 +1,13 @@
 .statistics {
-  max-width: 560px;
+  //max-width: 560px;
   box-sizing: border-box;
   padding: 30px 30px 26px;
   background: var(--back-dark);
   border-radius: 16px;
   display: flex;
   justify-content: space-between;
+
+  height: 290px;
 
   &__back {
     width: 100%;
@@ -16,6 +18,7 @@
     z-index: 2;
     position: absolute;
     top: 0;
+    border-radius: 16px;
   }
 
   &:hover {
@@ -31,6 +34,7 @@
 
   .swiper {
     position: relative;
+    border-radius: 16px;
 
     .statistics-slider__navigation {
       cursor: pointer;
@@ -135,10 +139,11 @@
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) { //800px
   .statistics {
     flex-wrap: wrap;
     padding: 30px 30px;
+    height: auto;
 
     &__info {
       width: 100%;

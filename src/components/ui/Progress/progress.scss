@@ -1,10 +1,45 @@
+//.svg-circle {
+//  width: 230px;
+//  height: 230px;
+//
+//  &__circle {
+//    cy: 127px;
+//    cx: 127px;
+//    r: 107px;
+//  }
+//}
+
 .progress {
   display: flex;
   padding: 30px;
   border-radius: 16px;
   box-sizing: border-box;
   background: var(--back-dark);
-  max-width: 560px;
+  //max-width: 560px;
+}
+
+.svg-circle {
+  transform: rotate(-90deg); // -90
+
+  &__main {
+    stroke: var(--circle-back);
+  }
+
+  &_cancellation {
+    stroke: var(--danger);
+  }
+
+  &_completed {
+    stroke: var(--success);
+  }
+
+  &_completed-partially {
+    stroke: var(--yellow);
+  }
+
+  &_performed {
+    stroke:var(--blue);
+  }
 }
 
 .progress-ellipse {
@@ -60,19 +95,33 @@
   }
 }
 
-@media (max-width: 1300px) {
-  .progress-ellipse {
+@media (max-width: 1200px) {
+  .svg-circle {
     width: 230px;
     height: 230px;
+
+    &__circle {
+      cy: 115px;
+      cx: 115px;
+      r: 105px;
+    }
+    circle {
+      //border: 1px solid red;
+      //width: 230px;
+      //height: 230px;
+      //r: 115px;
+      //cy: 127px;
+      //cx: 127px;
+    }
+  }
+
+  .progress-ellipse {
+    width: 230px;
+    height: 230px; //
 
     &__percent {
       font-size: 24px;
       line-height: 28px;
-    }
-
-    svg {
-      width: 230px;
-      height: 230px;
     }
   }
 }
@@ -91,10 +140,31 @@
       line-height: 47px;
     }
 
-    svg {
-      width: 305px;
+    //svg {
+    //  width: 305px;
+    //  height: 305px;
+    //}
+
+    .svg-circle {
+      width: 305px; // width: 305px;
       height: 305px;
+
+      &__circle {
+        cy: 150px;
+        cx: 150px;
+        r: 140px;
+        stroke-width: 10px;
+      }
+      //circle {
+        //border: 1px solid red;
+        //width: 230px;
+        //height: 230px;
+        //r: 115px;
+        //cy: 127px;
+        //cx: 127px;
+      //}
     }
+
   }
 
   .progress-head {
@@ -115,9 +185,11 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .progress {
     padding: 15px;
+    height: 183px;
+    box-sizing: border-box;
   }
 
   .progress-ellipse {
@@ -130,9 +202,21 @@
       line-height: 17px;
     }
 
-    svg {
-      width: 105px;
+    //svg {
+    //  width: 105px;
+    //  height: 105px;
+    //}
+    .svg-circle {
+      width: 105px; // width: 305px;
       height: 105px;
+      //height: 305px;
+
+      &__circle { //__circle
+        //border: 1px solid red;
+        cy: 52.5px;
+        cx: 52.5px;
+        r: 47.5px; //105
+      }
     }
   }
 

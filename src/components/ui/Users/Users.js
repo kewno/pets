@@ -12,7 +12,7 @@ const Users = ({users, func, ...attr}) => {
                                 <Avatar name={el.name} />
                            </div>
                 })}
-                <div className='users-add' onClick={() => {func()}}>
+                <div className='users-add users-elems__elem' onClick={() => {func()}}>
                     <p className='users-add__icon'>+</p>
                 </div>
             </div>
